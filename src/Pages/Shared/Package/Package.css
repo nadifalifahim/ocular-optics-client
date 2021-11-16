@@ -1,0 +1,51 @@
+.service-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px 3px var(--shadow-black-light);
+}
+
+.service-container h2 {
+  color: var(--color-dark-blue);
+  font-size: 1.8rem;
+  margin: 10px 0 0px 0;
+}
+
+.service-container p {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: var(--color-gray);
+  margin: 30px 30px;
+}
+
+.service-container button {
+  width: 40%;
+  border: none;
+  box-shadow: 0 0 1px 2px var(--shadow-black-light);
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.package-button-book {
+  background-color: var(--color-primary);
+  color: white;
+  margin-right: 20px;
+}
+
+.service-image-container {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.service-image-container img {
+  width: 100%;
+}

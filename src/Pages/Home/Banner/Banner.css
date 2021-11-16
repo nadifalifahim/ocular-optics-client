@@ -1,0 +1,88 @@
+.banner-container {
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+.banner-container img {
+  max-width: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -9;
+  filter: brightness(60%);
+}
+
+.banner-container h1 {
+  font-size: 5em;
+  line-height: 80px;
+  margin-bottom: 50px;
+}
+.banner-container h2 {
+  font-size: 2.4em;
+  font-weight: 200;
+}
+
+.banner-container button {
+  color: white;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: 60px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.banner-container button:hover {
+  background-color: var(--color-primary);
+  padding-left: 25px;
+}
+
+.banner-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.benefits-container {
+  display: flex;
+  width: 97%;
+  margin: auto;
+}
+
+.benefits-content {
+  display: flex;
+  padding: 50px;
+  transition: 0.5s all ease;
+}
+
+.benefits-content:hover {
+  box-shadow: 0px 0px 10px 5px var(--shadow-black-light);
+  cursor: default;
+}
+
+.benefits-content:hover i {
+  transform: scale(1.1);
+}
+
+.benefits-content i {
+  font-size: 2.5em;
+  padding: 5px 20px;
+  color: var(--color-primary);
+  transition: 0.3s all;
+}
+
+.benefits-content h2 {
+  color: var(--color-dark-blue);
+}
+
+.benefits-content p {
+  font-size: 1em;
+  color: var(--color-gray);
+  margin-top: 10px;
+}

@@ -1,0 +1,80 @@
+.nav-container {
+  width: 100%;
+  height: 10vh;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-container img {
+  width: auto;
+  height: 50px;
+  padding-right: 100px;
+}
+
+.logo-container p {
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+  margin-left: 20px;
+  position: absolute;
+  left: 30%;
+}
+
+.links-container a {
+  padding-left: 30px;
+  font-weight: 500;
+}
+
+.logged-in-state {
+  display: flex;
+  align-items: center;
+}
+
+.logged-in-state * {
+  margin: 0 5px;
+}
+
+.logged-in-state img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.logged-in-state button {
+  color: var(--color-primary);
+  background-color: white;
+  border: 1px solid var(--color-primary);
+  border-radius: 3px;
+  padding: 8px 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  transition: 0.3s all ease;
+}
+
+.logged-in-state button:hover {
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.logged-in-state p {
+  margin-right: 20px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
