@@ -1,0 +1,14 @@
+.dashboard-container {
+  display: flex;
+}
+
+.dashboard-sidebar {
+  flex: 1;
+}
+
+.dashboard-content {
+  flex: 5;
+}
+.dashboard-items {
+  height: 80vh;
+}

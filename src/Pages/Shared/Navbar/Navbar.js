@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import useAuth from "../../../Hooks/useAuth";
+import userIcon from "../../../Images/User/1.png";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -24,12 +25,21 @@ const Navbar = () => {
         <div className="links-container">
           <NavLink to="/home">HOME</NavLink>
           <NavLink to="/explore">EXPLORE</NavLink>
+          {user?.email && (
+            <div>
+              <NavLink to="/dashboard">DASHBOARD</NavLink>
+            </div>
+          )}
         </div>
 
         <div>
           {user?.email ? (
-            <div className="logged-in-state">
-              {user.photoURL && <img src={user.photoURL} alt="User" />}
+            <div className="logged-in-state ">
+              {user.photoURL ? (
+                <img src={user.photoURL} alt="User" />
+              ) : (
+                <img src={userIcon} alt="User" />
+              )}
               {user.displayName && <p>Hello, {setUserFirstName()}</p>}
               <button onClick={logOut}>
                 <i className="fas fa-sign-out-alt"></i>

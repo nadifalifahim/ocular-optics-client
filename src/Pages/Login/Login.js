@@ -10,13 +10,8 @@ import Footer from "../Shared/Footer/Footer";
 // Login Page
 const Login = () => {
   useTitle("Login");
-  const {
-    signInUsingGoogle,
-    setIsLoading,
-    setUser,
-    signInUsingEmail,
-    isLoading,
-  } = useFirebase();
+  const { signInUsingGoogle, setIsLoading, setUser, signInUsingEmail } =
+    useFirebase();
 
   const location = useLocation();
   const history = useHistory();

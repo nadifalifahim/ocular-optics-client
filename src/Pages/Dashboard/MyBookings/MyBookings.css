@@ -1,0 +1,40 @@
+.bookings-body {
+  background-color: var(--color-light-gray);
+  min-height: 81vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../Images/Banner/1.jpg");
+}
+
+.bookings-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 10px;
+  width: 40%;
+  background-color: white;
+  box-shadow: 0px 10px 15px 5px var(--shadow-black-light);
+  margin: 50px 0;
+}
+
+.bookings-container div {
+  width: 100%;
+}
+
+.bookings-container h1 {
+  font-size: 2.7rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.bookings-container h2 {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--color-primary);
+}

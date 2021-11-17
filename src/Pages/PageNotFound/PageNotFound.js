@@ -16,7 +16,7 @@ const PageNotFound = () => {
           <h1>Page Not Found!</h1>
           <h5>Please try searching for some other page</h5>
 
-          <HashLink to="/#home">
+          <HashLink to="/home">
             <button className="primary-button">Back to home</button>
           </HashLink>
         </div>

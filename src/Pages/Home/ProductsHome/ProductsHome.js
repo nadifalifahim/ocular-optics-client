@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-import "./Products.css";
-import Loader from "react-loader-spinner";
+import "./ProductsHome.css";
 import Package from "../../Shared/Package/Package";
 import { Link } from "react-router-dom";
+import useLoader from "../../../Hooks/useLoader";
 
-const Products = () => {
-  const [serviceData, setServiceData] = useState([]);
+const ProductsHome = () => {
+  const [productData, setProductData] = useState([]);
   const [runLoader, setRunLoader] = useState(true);
+  const loader = useLoader();
 
   useEffect(() => {
-    fetch("https://hidden-basin-94639.herokuapp.com/services")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => {
-        setServiceData(data);
+        setProductData(data);
         setRunLoader(false);
       });
   }, []);
@@ -32,13 +33,11 @@ const Products = () => {
         </div>
         {/* Loader while loading */}
         {runLoader ? (
-          <div className="loader">
-            <Loader type="Grid" color="#f36201" height={80} width={80} />
-          </div>
+          loader
         ) : (
           <div>
             <div className="home-service-container">
-              {serviceData.slice(0, 6).map((service) => (
+              {productData.slice(0, 6).map((service) => (
                 <Package key={service._id} service={service}></Package>
               ))}
             </div>
@@ -54,4 +53,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsHome;

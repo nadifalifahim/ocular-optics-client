@@ -5,6 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  background-color: white;
+  z-index: 10;
 }
 
 .nav-content {
@@ -36,6 +41,12 @@
   left: 30%;
 }
 
+.links-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .links-container a {
   padding-left: 30px;
   font-weight: 500;
@@ -51,7 +62,7 @@
 }
 
 .logged-in-state img {
-  width: 50px;
+  width: 45px;
   border-radius: 50%;
 }
 
@@ -64,7 +75,7 @@
   font-size: 1rem;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   transition: 0.3s all ease;
 }
 
@@ -75,6 +86,6 @@
 
 .logged-in-state p {
   margin-right: 20px;
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
 }

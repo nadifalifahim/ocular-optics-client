@@ -52,5 +52,5 @@
 
 .divider {
   min-width: 3px;
-  background: var(--color-primary);
+  background: white;
 }

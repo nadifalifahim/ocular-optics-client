@@ -1,0 +1,39 @@
+.service-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 50px auto;
+  min-height: 70vh;
+}
+
+.service-details-image-container img {
+  border-radius: 20px;
+  max-width: 600px;
+}
+
+.service-details-content {
+  margin: 0 100px;
+}
+
+.service-details-content h1 {
+  margin-bottom: 20px;
+}
+
+.service-details-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-details-image-container div {
+  width: 100%;
+}
+
+.service-details-image-container button {
+  width: 100%;
+}
+
+.billing-details {
+  
+}

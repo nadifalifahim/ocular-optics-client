@@ -5,7 +5,7 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import OnlineShopServices from "../OnlineShopServices/OnlineShopServices";
-import Products from "../Products/Products";
+import ProductsHome from "../ProductsHome/ProductsHome";
 import Stats from "../Stats/Stats";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
       <Navbar></Navbar>
       <Banner></Banner>
       <OnlineShopServices></OnlineShopServices>
-      <Products></Products>
+      <ProductsHome></ProductsHome>
       <Stats></Stats>
       <Contact></Contact>
       <Footer></Footer>

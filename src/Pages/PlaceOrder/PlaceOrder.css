@@ -1,0 +1,68 @@
+.place-order-container {
+  text-align: center;
+  min-height: 60vh;
+  width: 60%;
+  margin: 100px auto;
+}
+
+.place-order-container form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.place-order-container h1 {
+  margin-bottom: 30px;
+}
+
+.place-order-container input,
+.place-order-container textarea {
+  border: none;
+  outline: none;
+  background-color: var(--color-light-gray);
+  padding: 10px;
+  margin: 10px 0;
+  width: 97%;
+}
+
+.place-order-container textarea {
+  min-height: 10vh;
+}
+
+.order-details-container {
+  margin-bottom: 50px;
+}
+
+.order-details-content {
+  display: flex;
+}
+
+.order-details-content div {
+  text-align: left;
+}
+
+.order-details-content h2 {
+  font-size: 2.2rem;
+  color: var(--color-dark-blue);
+  margin-bottom: 10px;
+}
+
+.order-details-content p {
+  color: var(--color-black);
+}
+
+.order-details-container img {
+  max-width: 390px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.billing-details {
+  display: flex;
+
+  justify-content: center;
+}
+
+.billing-details-content {
+  width: 50%;
+}
