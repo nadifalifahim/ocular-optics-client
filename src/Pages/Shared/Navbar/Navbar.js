@@ -18,7 +18,7 @@ const Navbar = () => {
       <nav className="nav-content">
         <Link to="/home">
           <div className="logo-container">
-            <img src="logo192.png" alt="ocular logo"></img>
+            <img src="/logo192.png" alt="ocular logo"></img>
             <p>OCULAR</p>
           </div>
         </Link>

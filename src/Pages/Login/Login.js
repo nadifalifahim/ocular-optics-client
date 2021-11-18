@@ -6,16 +6,23 @@ import googleIcon from "../../Images/Login/google.png";
 import useTitle from "../../Hooks/useTitle";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
+import useAlert from "../../Hooks/useAlert";
 
 // Login Page
 const Login = () => {
   useTitle("Login");
-  const { signInUsingGoogle, setIsLoading, setUser, signInUsingEmail } =
-    useFirebase();
+  const {
+    signInUsingGoogle,
+    setIsLoading,
+    setUser,
+    signInUsingEmail,
+    authError,
+  } = useFirebase();
 
   const location = useLocation();
   const history = useHistory();
   const locationURL = location.state?.from || "/home";
+  const showAlert = useAlert(authError, "failure");
 
   const handleGoogleSignIn = () => {
     signInUsingGoogle()
@@ -86,6 +93,7 @@ const Login = () => {
                 <img src={googleIcon} alt="google"></img>
               </button>
             </div>
+            {authError && <div className="successAlert">{showAlert}</div>}
           </div>
         </div>
       </div>

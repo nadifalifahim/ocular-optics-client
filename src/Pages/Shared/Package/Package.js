@@ -16,7 +16,7 @@ const Package = (props) => {
           Buy Now <i className="fas fa-chevron-right"></i>
         </button>
       </Link>
-      <Link to={`/services/${_id}`}>
+      <Link to={`/products/${_id}`}>
         <button className="package-button-details">More details </button>
       </Link>
     </div>

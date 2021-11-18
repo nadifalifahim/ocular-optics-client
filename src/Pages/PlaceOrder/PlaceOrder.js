@@ -72,61 +72,63 @@ const PlaceOrder = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="place-order-container">
-        <div className="order-details-container">
-          <h1 className="section-title">Order Details </h1>
-          <div className="order-details-content">
-            <img src={serviceInfo.serviceImage} alt="service" />
-            <div>
-              <h2>{serviceInfo.serviceName}</h2>
-              <h3>Price: $ {serviceInfo.servicePrice}</h3>
-              <br />
-              <h3>Description</h3>
-              <p>{serviceInfo.serviceDescription}</p>
+      <div>
+        <div className="place-order-container">
+          <div className="order-details-container">
+            <h1 className="section-title">Order Details </h1>
+            <div className="order-details-content">
+              <img src={serviceInfo.serviceImage} alt="service" />
+              <div>
+                <h2>{serviceInfo.serviceName}</h2>
+                <h3>Price: $ {serviceInfo.servicePrice}</h3>
+                <br />
+                <h3>Description</h3>
+                <p>{serviceInfo.serviceDescription}</p>
+              </div>
+            </div>
+          </div>
+          <div className="billing-details">
+            <div className="billing-details-content">
+              <h1 className="section-title">Billing Details</h1>
+              <form onSubmit={handleOrder}>
+                <label>
+                  Full Name
+                  <input
+                    type="text"
+                    required
+                    value={userName}
+                    onChange={handleNameChange}
+                    ref={nameRef}
+                  ></input>
+                </label>
+                <label>
+                  Email Address
+                  <input
+                    type="email"
+                    required
+                    value={userEmail}
+                    onChange={handleEmailChange}
+                    ref={emailRef}
+                  ></input>
+                </label>
+                <label>
+                  Phone Number
+                  <input type="number" required ref={phoneRef}></input>
+                </label>
+                <label>
+                  Shipping Address
+                  <textarea type="text" required ref={addressRef}></textarea>
+                </label>
+
+                <button type="submit" className="primary-button">
+                  Place Order
+                </button>
+              </form>
             </div>
           </div>
         </div>
-        <div className="billing-details">
-          <div className="billing-details-content">
-            <h1 className="section-title">Billing Details</h1>
-            <form onSubmit={handleOrder}>
-              <label>
-                Full Name
-                <input
-                  type="text"
-                  required
-                  value={userName}
-                  onChange={handleNameChange}
-                  ref={nameRef}
-                ></input>
-              </label>
-              <label>
-                Email Address
-                <input
-                  type="email"
-                  required
-                  value={userEmail}
-                  onChange={handleEmailChange}
-                  ref={emailRef}
-                ></input>
-              </label>
-              <label>
-                Phone Number
-                <input type="number" required ref={phoneRef}></input>
-              </label>
-              <label>
-                Shipping Address
-                <textarea type="text" required ref={addressRef}></textarea>
-              </label>
-
-              <button type="submit" className="primary-button">
-                Place Order
-              </button>
-            </form>
-          </div>
-        </div>
+        <Footer></Footer>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

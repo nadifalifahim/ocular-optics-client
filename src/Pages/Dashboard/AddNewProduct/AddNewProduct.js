@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import useSuccessAlert from "../../../Hooks/useSuccessAlert";
+import useAlert from "../../../Hooks/useAlert";
 import "./AddNewProduct.css";
 
 const AddNewProduct = () => {
@@ -8,8 +8,8 @@ const AddNewProduct = () => {
   const productPriceRef = useRef();
   const productDescriptionRef = useRef();
 
-  const showSuccessAlert = useSuccessAlert();
-  const [showAlert, setShowAlert] = useState(true);
+  const showSuccessAlert = useAlert("Product added successfully", "success");
+  const [showAlert, setShowAlert] = useState(false);
   setTimeout(() => {
     setShowAlert(false);
   }, 1000);
@@ -66,7 +66,9 @@ const AddNewProduct = () => {
             <button type="submit" className="primary-button">
               Add New Product
             </button>
-            {showAlert && <div> {showSuccessAlert}</div>}
+            {showAlert && (
+              <div className="successAlert">{showSuccessAlert}</div>
+            )}
           </form>
         </div>
       </div>

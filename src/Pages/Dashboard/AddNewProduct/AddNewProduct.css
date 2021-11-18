@@ -31,3 +31,7 @@
 .new-service-container textarea {
   height: 10vh;
 }
+
+.successAlert {
+  margin: 20px 0;
+}

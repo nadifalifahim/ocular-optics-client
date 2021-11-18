@@ -8,6 +8,7 @@ import Login from "./Pages/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
+import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import Register from "./Pages/Register/Register";
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login></Login>
+            </Route>
+            <Route exact path="/products/:id">
+              <ProductDetails></ProductDetails>
             </Route>
             <PrivateRoute exact path="/dashboard">
               <Dashboard></Dashboard>
