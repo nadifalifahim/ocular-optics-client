@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from "react";
-import "./Bookings.css";
-import MyBookings from "../../MyBookings/MyBookings";
+import useAuth from "../../../Hooks/useAuth";
+import "./ProductCard.css";
 
-const Bookings = (props) => {
-  const { bookingDetails, admin } = props;
+const ProductCard = (props) => {
+  const { productDetails } = props;
+  const { admin } = useAuth();
   const [currentBooking, setCurrentBooking] = useState("");
   const [bookingStatus, setBookingStatus] = useState(
-    bookingDetails.orderStatus
+    productDetails.orderStatus
   );
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${bookingDetails.serviceId}`)
+    fetch(`http://localhost:5000/product/${productDetails.serviceId}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setCurrentBooking(data);
       });
-  }, [bookingDetails.serviceId]);
+  }, [productDetails.serviceId]);
 
   const handleBookingDelete = () => {
     let confirmDelete = window.confirm(
       "Are you sure you want to delete your booking?"
     );
     if (confirmDelete) {
-      fetch(`http://localhost:5000/orders/${bookingDetails._id}`, {
+      fetch(`http://localhost:5000/orders/${productDetails._id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",
@@ -41,7 +42,7 @@ const Bookings = (props) => {
   };
 
   const handleStatusUpdate = () => {
-    fetch(`http://localhost:5000/orders/${bookingDetails._id}`, {
+    fetch(`http://localhost:5000/orders/${productDetails._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -59,7 +60,7 @@ const Bookings = (props) => {
       <div className="bookings-items-content">
         <div className="bookings-paragraph-container">
           <p>
-            {currentBooking.serviceName} <small>by {bookingDetails.name}</small>
+            {currentBooking.serviceName} <small>by {productDetails.name}</small>
           </p>
         </div>
         <div className="bookings-button-container">
@@ -75,4 +76,4 @@ const Bookings = (props) => {
   );
 };
 
-export default Bookings;
+export default ProductCard;

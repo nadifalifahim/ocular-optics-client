@@ -10,19 +10,13 @@ import Footer from "../Shared/Footer/Footer";
 // Register page
 
 const Register = () => {
-  const {
-    signInUsingGoogle,
-    registerUsingEmailandPassword,
-    setUser,
-    setIsLoading,
-  } = useFirebase();
+  const { signInUsingGoogle, registerUsingEmailandPassword } = useFirebase();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const location = useLocation();
   const history = useHistory();
-  const locationURL = location.state?.from || "/home";
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -34,18 +28,12 @@ const Register = () => {
     setPassword(e.target.value);
   };
   const handleRegistration = (e) => {
-    console.log(name, email, password);
-    registerUsingEmailandPassword(name, email, password);
-    history.push(locationURL);
+    registerUsingEmailandPassword(name, email, password, location, history);
+    e.preventDefault();
   };
 
   const handleGoogleSignIn = () => {
-    signInUsingGoogle()
-      .then((result) => {
-        history.push(locationURL);
-        setUser(result.user);
-      })
-      .finally(() => setIsLoading(false));
+    signInUsingGoogle(location, history);
   };
 
   return (

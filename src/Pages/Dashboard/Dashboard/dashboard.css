@@ -10,5 +10,5 @@
   flex: 5;
 }
 .dashboard-items {
-  height: 80vh;
+  min-height: 80vh;
 }

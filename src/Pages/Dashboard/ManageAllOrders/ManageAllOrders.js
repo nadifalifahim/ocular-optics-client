@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Bookings from "../../Shared/Bookings/Bookings";
+import ProductCard from "../../Shared/ProductCard/ProductCard";
 
-const ManageAllBookings = () => {
+const ManageAllOrders = () => {
   const [allBookings, setAllBookings] = useState([]);
   const admin = true;
 
   useEffect(() => {
-    fetch("http://localhost:5000/my-orders")
+    fetch("http://localhost:5000/all-orders")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -19,17 +19,17 @@ const ManageAllBookings = () => {
       <div className="bookings-body">
         <div className="bookings-container">
           <div>
-            <h1>All Bookings</h1>
-            <h2>Displaying bookings from all users</h2>
+            <h1>All Orders</h1>
+            <h2>Displaying orders from all users</h2>
           </div>
 
           <div>
             {allBookings.map((bookings) => (
-              <Bookings
+              <ProductCard
                 key={bookings._id}
-                bookingDetails={bookings}
+                productDetails={bookings}
                 admin={admin}
-              ></Bookings>
+              ></ProductCard>
             ))}
           </div>
         </div>
@@ -38,4 +38,4 @@ const ManageAllBookings = () => {
   );
 };
 
-export default ManageAllBookings;
+export default ManageAllOrders;

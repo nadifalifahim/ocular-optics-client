@@ -11,26 +11,15 @@ import useAlert from "../../Hooks/useAlert";
 // Login Page
 const Login = () => {
   useTitle("Login");
-  const {
-    signInUsingGoogle,
-    setIsLoading,
-    setUser,
-    signInUsingEmail,
-    authError,
-  } = useFirebase();
+  const { signInUsingGoogle, signInUsingEmail, authError } = useFirebase();
 
   const location = useLocation();
   const history = useHistory();
-  const locationURL = location.state?.from || "/home";
-  const showAlert = useAlert(authError, "failure");
+
+  const showAlert = useAlert(authError, "warning");
 
   const handleGoogleSignIn = () => {
-    signInUsingGoogle()
-      .then((result) => {
-        history.push(locationURL);
-        setUser(result.user);
-      })
-      .finally(() => setIsLoading(false));
+    signInUsingGoogle(location, history);
   };
 
   const [email, setEmail] = useState("");
@@ -43,8 +32,7 @@ const Login = () => {
     setPassword(e.target.value);
   };
   const handleEmailSignIn = (e) => {
-    signInUsingEmail(email, password);
-    history.push(locationURL);
+    signInUsingEmail(email, password, location, history);
     e.preventDefault();
   };
 
