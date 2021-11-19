@@ -6,8 +6,11 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import AddNewProduct from "../AddNewProduct/AddNewProduct";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
+import ManageProducts from "../ManageProducts/ManageProducts";
 import MyOrders from "../MyOrders/MyOrders";
 import Pay from "../Pay/Pay";
+import PrivateRouteDashboard from "../PrivateRouteDashboard/PrivateRouteDashboard";
+import Review from "../Review/Review";
 import Sidebar from "../Sidebar/Sidebar";
 import "./dashboard.css";
 
@@ -34,18 +37,24 @@ const Dashboard = () => {
                 <Route exact path={`${path}/my-orders`}>
                   <MyOrders></MyOrders>
                 </Route>
-                <Route exact path={`${path}/manage-all-orders`}>
-                  <ManageAllOrders></ManageAllOrders>
+                <Route exact path={`${path}/review`}>
+                  <Review></Review>
                 </Route>
                 <Route exact path={`${path}/pay`}>
                   <Pay></Pay>
                 </Route>
-                <Route path={`${path}/add-new-product`}>
+                <PrivateRouteDashboard exact path={`${path}/manage-all-orders`}>
+                  <ManageAllOrders></ManageAllOrders>
+                </PrivateRouteDashboard>
+                <PrivateRouteDashboard exact path={`${path}/manage-products`}>
+                  <ManageProducts></ManageProducts>
+                </PrivateRouteDashboard>
+                <PrivateRouteDashboard path={`${path}/add-new-product`}>
                   <AddNewProduct></AddNewProduct>
-                </Route>
-                <Route path={`${path}/add-new-admin`}>
+                </PrivateRouteDashboard>
+                <PrivateRouteDashboard path={`${path}/add-new-admin`}>
                   <MakeAdmin></MakeAdmin>
-                </Route>
+                </PrivateRouteDashboard>
               </Switch>
             </div>
             <Footer></Footer>

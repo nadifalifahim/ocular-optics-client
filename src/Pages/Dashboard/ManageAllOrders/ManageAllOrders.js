@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import useAuth from "../../../Hooks/useAuth";
 import ProductCard from "../../Shared/ProductCard/ProductCard";
 
 const ManageAllOrders = () => {
   const [allBookings, setAllBookings] = useState([]);
-  const admin = true;
+  const { admin } = useAuth();
 
   useEffect(() => {
     fetch("http://localhost:5000/all-orders")

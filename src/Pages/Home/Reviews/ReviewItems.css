@@ -1,0 +1,29 @@
+.review-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 5px 5px 20px 3px var(--shadow-black-light);
+}
+
+.review-container h1 {
+  color: rgb(255, 153, 0);
+}
+.review-container h1 i {
+  margin: 20px 5px;
+}
+
+.review-container h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.review-container h4 {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.review-container h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

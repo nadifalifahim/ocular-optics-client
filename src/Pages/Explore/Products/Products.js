@@ -21,13 +21,15 @@ const Products = () => {
     <div>
       <div id="packages" className="home-services-container">
         <div className="home-services-content">
-          <small className="section-heading">Choose Your Package</small>
+          <small className="section-heading">
+            Affordable sunglasses to fit any activity
+          </small>
           <h2 className="section-title">
-            Select Your Best Package For Your Travel
+            Shop the greatest selection of designer sunglasses
           </h2>
           <p className="section-content">
-            Need help deciding where to go next? Take a look at some of our
-            travelers’ recommended vacations.
+            Express yourself and look instantly glamorous with the best
+            sunglasses from different world class designers.
           </p>
         </div>
         {/* Loader while loading */}
@@ -36,8 +38,8 @@ const Products = () => {
         ) : (
           <div>
             <div className="home-service-container">
-              {productData.map((service) => (
-                <Package key={service._id} service={service}></Package>
+              {productData.map((product) => (
+                <Package key={product._id} service={product}></Package>
               ))}
             </div>
           </div>

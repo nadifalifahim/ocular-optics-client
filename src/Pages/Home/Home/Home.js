@@ -6,6 +6,7 @@ import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import OnlineShopServices from "../OnlineShopServices/OnlineShopServices";
 import ProductsHome from "../ProductsHome/ProductsHome";
+import Reviews from "../Reviews/Reviews";
 import Stats from "../Stats/Stats";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       <OnlineShopServices></OnlineShopServices>
       <ProductsHome></ProductsHome>
       <Stats></Stats>
+      <Reviews></Reviews>
       <Contact></Contact>
       <Footer></Footer>
     </div>
