@@ -9,7 +9,7 @@ const MyOrders = () => {
   const admin = false;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my-orders/${user.email}`)
+    fetch(`https://ocular-optics.herokuapp.com/my-orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

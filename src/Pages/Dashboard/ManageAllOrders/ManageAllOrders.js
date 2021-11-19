@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
   const { admin } = useAuth();
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-orders")
+    fetch("https://ocular-optics.herokuapp.com/all-orders")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

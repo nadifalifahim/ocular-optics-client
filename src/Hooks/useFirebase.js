@@ -92,7 +92,7 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://ocular-optics.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -115,7 +115,7 @@ const useFirebase = () => {
   const saveUser = (email, displayName, method) => {
     const userData = { email, displayName };
     console.log(userData);
-    fetch("http://localhost:5000/users", {
+    fetch("https://ocular-optics.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

@@ -10,7 +10,7 @@ const ProductDetails = () => {
   const [currentProduct, setCurrentProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://ocular-optics.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setCurrentProduct(data));
   }, [id]);

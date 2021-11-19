@@ -9,7 +9,7 @@ const Reviews = () => {
   const loader = useLoader();
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://ocular-optics.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

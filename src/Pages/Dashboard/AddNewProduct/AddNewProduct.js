@@ -26,7 +26,7 @@ const AddNewProduct = () => {
       servicePrice: productPrice,
       serviceDescription: productDescription,
     };
-    fetch("http://localhost:5000/add-new-product", {
+    fetch("https://ocular-optics.herokuapp.com/add-new-product", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

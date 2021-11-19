@@ -6,7 +6,7 @@ const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   const { admin } = useAuth();
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://ocular-optics.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

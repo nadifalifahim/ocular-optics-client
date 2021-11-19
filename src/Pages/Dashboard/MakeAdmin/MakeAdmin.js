@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const adminEmail = adminEmailRef.current.value;
     const email = { adminEmail };
 
-    fetch("http://localhost:5000/admin", {
+    fetch("https://ocular-optics.herokuapp.com/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -8,12 +8,15 @@ const ManageProductItems = (props) => {
       "Are you sure you want to delete your booking?"
     );
     if (confirmDelete) {
-      fetch(`http://localhost:5000/products/${productDetails._id}`, {
-        method: "DELETE",
-        headers: {
-          "content-type": "application/json",
-        },
-      })
+      fetch(
+        `https://ocular-optics.herokuapp.com/products/${productDetails._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

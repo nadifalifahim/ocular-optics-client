@@ -11,7 +11,9 @@ const ProductCard = (props) => {
   );
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${productDetails.serviceId}`)
+    fetch(
+      `https://ocular-optics.herokuapp.com/product/${productDetails.serviceId}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -24,12 +26,15 @@ const ProductCard = (props) => {
       "Are you sure you want to delete your booking?"
     );
     if (confirmDelete) {
-      fetch(`http://localhost:5000/orders/${productDetails._id}`, {
-        method: "DELETE",
-        headers: {
-          "content-type": "application/json",
-        },
-      })
+      fetch(
+        `https://ocular-optics.herokuapp.com/orders/${productDetails._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -42,7 +47,7 @@ const ProductCard = (props) => {
   };
 
   const handleStatusUpdate = () => {
-    fetch(`http://localhost:5000/orders/${productDetails._id}`, {
+    fetch(`https://ocular-optics.herokuapp.com/orders/${productDetails._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
